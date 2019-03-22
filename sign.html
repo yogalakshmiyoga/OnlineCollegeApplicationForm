@@ -1,0 +1,223 @@
+<html>
+<head>
+    <title></title>
+    <style>
+        .form1{
+            margin-top: 10%;
+            background-color: beige;
+            width: 50%;
+            height: 40%;
+            margin-left: 20%;
+        }
+        .cap1{
+            margin-bottom: 10%;
+            font-family:monospace;
+            color:  chocolate;
+            font-size: 160%;
+        }
+       
+       .topnav {
+  overflow: hidden;
+  background-color:f7af44;
+  width: 100%;
+  position: fixed;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 1% 2%;
+  text-decoration: none;
+  font-size: 130%;
+}
+
+.topnav a:hover {
+  background-color: 654321;
+  color: black;
+}
+   
+        .btn{
+                
+                background-color:burlywood;
+                font-family:sans-serif;
+                cursor: pointer;
+                padding: 1% 1%;
+                color:white;
+                font-size: 150%;
+                box-shadow: 0 12% 16% 0 rgba(0,0,0,0.24),0 17% 50% 0 rgba(0,0,0,0.19);
+                text-align: center;
+               
+               }
+        .col{
+            width: 50%;
+            font-family: monospace;
+            font-size: 140%;
+            color: brown;
+        }
+        
+        
+        .icon{
+    border-radius: 90%; 
+}
+        .foot{
+            width: 100%;
+            height: 15%;
+            background-color: #3c2a1e;
+        }
+        
+        .lab{
+            color: white;
+            font-family: sans-serif;
+            font-size: 20px;
+            float: right;
+            
+        }
+        
+        .col2{
+            width: 100%;
+        }
+        </style>
+    
+    </head>
+    <body style="background-color: azure;">
+         <section class="topnav" id="myTopnav">
+  		<a href="best.html" class="active">Home</a>
+  		<a href="aboutus.html">About</a>
+		<a href="tryinsert.html">Admission</a>
+  		<a href="contact.html">Contact</a>	
+      
+		
+		</section><br><br>
+    <form class="form1" method="get">
+        <table class="tab1" align="center">
+            <caption class="cap1"><strong>APPLICANT SIGNUP PAGE</strong></caption><br>
+            <tr><td class="col">E-Mail</td>
+            <td><input type="email" name="mail" id="Email" class="col2" required></td>
+            <td><span id="err1" class="errormessage1"></span></td></tr>
+            <tr>
+                <td class="col"> Password</td>
+                <td><input type="password" name="psw1" id="passwords"  class="col2" required> 
+				<td><span id="err2" class="errormessage1"></span></td>
+                </tr>
+            <tr>
+                <td class="col">Confirm Password</td>
+                <td> <input type="password" name="psw2" id="conpassword"  class="col2" required>
+                <td><span id="err3" class="errormessage1"></span></td>
+            </tr>
+            <tr></tr>
+            <tr></tr>
+            <tr></tr><br>
+            <tr><td width="10%"></td></tr>
+           <tr><td  colspan="2" align="center"><input type="submit" name="regi" value="REGISTER" id="signval" class="btn" onclick="login.html">
+             </td>
+            </tr>
+           </table>
+    <script>
+            var btn=document.getElementById('signval');
+            var em=document.getElementById('Email');
+            var ps=document.getElementById('passwords');
+            var cps=document.getElementById('conpassword');
+            
+        function checkValidity()
+            {  
+                var check=1;
+                                
+                if(em.checkValidity)
+                    {
+                        document.getElementById("err1").innerHTML=em.validationMessage;
+                        if(em.validationMessage.toString().length!=0)
+                            check=0;
+                    }
+                 if(mail.validity.patternMismatch)
+                    {
+                        document.getElementById("err1").innerHTML=em.validationMessage;
+                        if(em.validationMessage.toString.length!=0)
+                            check=0;
+                    }
+                
+                if(ps.checkValidity)
+                    {
+                        document.getElementById("err2").innerHTML=ps.validationMessage;
+                        if(ps.validationMessage.toString().length!=0)
+                            check=0;
+                    }
+                 if(cps.checkValidity)
+                    {
+                        document.getElementById("err3").innerHTML=cps.validationMessage;
+                        if(cps.validationMessage.toString.length!=0)
+                            check=0;
+                    }
+                else if(ps.value!=cps.value){
+                   document.getElementById("err3").innerHTML='Password mismatch';
+                    return false;
+                    check=0;
+                }
+                /*if(cps.checkValidity)
+                    {
+                        document.getElementById("err3").innerHTML=mail.validationMessage;
+                        if(cps.validationMessage.toString().length!=0)
+                            check=0;
+                    }
+                 if(cps.validity.patternMismatch)
+                    {
+                        document.getElementById("err3").innerHTML=em.validationMessage;
+                        if(cps.validationMessage.toString.length!=0)
+                            check=0;
+                    }*/
+                
+                if(check==0)
+                    {
+                        return false;
+                    }
+                else {
+                    return true;
+                }
+            }
+        
+            signval.onclick=function(e)
+            {
+                var bool=checkValidity();
+                if(bool==false)
+                    {
+                        e.preventDefault();
+                    }
+            };
+        </script>
+        
+        
+       </form>
+        
+            <br>
+             <br>
+             <br>
+             <br>
+             <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>   
+         <footer class="foot">
+        <table>
+            
+           <tr>
+            <td class="fcol">
+               <img src="icon.png"  class="icon" alt="Avatar" style="width:100px">
+               </td>
+                <td>
+        
+            <label class="lab">
+                STELLA MARIS COLLEGE (Atononomous),
+            &nbsp; &nbsp; &nbsp; © Copyright Stella Maris College 
+                
+                  17, <br>Cathedral Road,Chennai - 600086. 
+            </label>
+        </td>
+            </tr>
+           </table>
+        </footer>
+    </body>
+</html>
